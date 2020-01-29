@@ -70,8 +70,8 @@ func (b *Bitbucket) EventType() string {
 	return b.event.Name()
 }
 
-func (b *Bitbucket) GitBranch() string {
-	return b.event.BranchName()
+func (b *Bitbucket) GitBranches() []string {
+	return b.event.BranchNames()
 }
 
 func (b *Bitbucket) GitUrl() string {

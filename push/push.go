@@ -101,6 +101,10 @@ func (p *Push) RepositoryFullName() string {
 	return *p.repository.FullName
 }
 
-func (p *Push) BranchName() string {
-	return p.Changes[0].New.Name
+func (p *Push) BranchNames() []string {
+	branches := []string{}
+	for _, v := range p.Changes {
+		branches = append(branches, v.New.Name)
+	}
+	return branches
 }
